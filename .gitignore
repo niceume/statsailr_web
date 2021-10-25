@@ -1,0 +1,10 @@
+.bundle
+*.log
+*.pid
+passenger.*.lock
+
+Gemfile.lock
+/public/img/result/*.jpeg
+/public/img/result/*.jpg
+/public/img/result/*.png
+/vendor/bundle/

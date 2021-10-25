@@ -1,0 +1,79 @@
+<section class="section">
+  <div class="container">
+    <div class="is-centered has-text-centered">
+
+      <h1 class="title is-1 mb-5"> StatSailr Runs Online </h1>
+      <h2 class="subtitle is-3 my-5">
+        StatSailr provides a script based statistics system. 
+      </h2>
+      <h3 class="subtitle is-3 my-5">
+        You can try it online from here.
+      </h3>
+      <a href="/sailr/try_sailr"> 
+        <button class="button is-large is-info">Try StatSailr</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="is-centered ">
+      <div class="box has-background-black">
+        <code class="has-background-black">
+// Example: Analysis of iris dataset <br />
+<br />
+<font color="#C7F9F9">READ</font> <font color="#FFAE42">builtin=iris</font> <br />
+<br />
+<font color="#C7F9F9">DATA</font> <font color="#FFAE42">new_iris set=iris</font> <br />
+  <font color="#D4FF9E">if(</font>
+  <font color="#C7F9F9">Sepal.Length</font> <font color="#D4FF9E">></font> <font color="#FFD2FF">5.0</font>
+  <font color="#D4FF9E">){</font>
+  <font color="#C7F9F9">sepal</font> <font color="#D4FF9E">=</font> <font color="#FFD2FF">"long"</font>
+  <font color="#D4FF9E">}</font> <br />
+  <font color="#D4FF9E">else{</font>
+  <font color="#C7F9F9">sepal</font> <font color="#D4FF9E">=</font> <font color="#FFD2FF">"short"</font>
+  <font color="#D4FF9E">}</font> <br />
+<font color="#C7F9F9">END</font> <br />
+<br />
+<font color="#C7F9F9">PROC CAT</font> <font color="#FFAE42">data=new_iris</font> <br />
+  <font color="#D4FF9E">table</font> <font color="#C7F9F9">Species sepal</font> <br />
+  <font color="#D4FF9E">chisq.test</font> <br />
+<font color="#C7F9F9">END</font> <br />
+<br />
+<font color="#C7F9F9">PROC REG</font> <font color="#FFAE42">data=new_iris</font> <br />
+  <font color="D4FF9E">lm</font> <font color="#C7F9F9">Sepal.Length ~ factor(Species)</font> <br />
+<font color="#C7F9F9">END</font> <br />
+        </code>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="section">
+  <div class="container">
+    <div class="is-centered has-text-centered">
+      <h3 class="subtitle is-3 my-5" > For Documents and Tutorials </h3>
+      <a href="https://statsailr.io" target="_blank"> 
+        <button class="button is-large">Visit Official Website</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered is-vcentered">
+      <div class="mr-2">StatSailr is powered by </div>
+      <figure>
+        <a href="https://www.r-project.org/" target="_blank">
+          <img src="/img/logo/Rlogo.svg" width=80px target="_blank" />
+        </a>
+      </figure>
+    </div>
+  </div>
+</section>
+
+

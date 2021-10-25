@@ -1,0 +1,54 @@
+@charset "utf-8";
+@import "bulma-0.9.3/sass/utilities/initial-variables";
+@import "bulma-0.9.3/sass/utilities/functions";
+
+// CUSTOMISE //
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+
+// Update Bulma's global variables
+
+$body-line-height: 1.7;
+$intro-color: #FFFFFF;
+$intro-invert-color: #122C38;
+$sailr-color: #45A1CF;
+$sailr-invert-color: #FFFFFF;
+$primary: $sailr-color;
+
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// By setting custom-colors, you can specify colors using "is-intro" and "is-sailr" for class properties.
+$custom-colors: ("intro": ($intro-color, $intro-invert-color), "sailr": ($sailr-color, $sailr-invert-color) );
+
+// Add spaces
+
+$margin-size-list: (0,5,10,15,20,25,30,35,40,50,100);
+$margin-pos-list: ('top','left','bottom','right');
+@each $margin-size in $margin-size-list {
+  @each $margin-pos in $margin-pos-list {
+    .add-children-margin-#{$margin-pos}-#{$margin-size} {
+      h1, h2, p, pre, table {
+        margin-#{$margin-pos}: $margin-size + px;
+      }
+    }
+  }
+}
+
+
+// Image size
+
+.image-small {  width: 50%; }
+.image-medium {  width: 85%; }
+.image-large {  width: 100%; }
+
+
+// END CUSTOMIZE //
+
+@import "bulma-0.9.3/bulma.sass";
+// @import "bulma-helpers/bulma-helpers.sass";
+
+

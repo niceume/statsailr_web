@@ -1,0 +1,83 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Try StatSailr</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js"></script>
+
+    <script>
+    split = function(){
+        Split(['#pane-1', '#pane-2'], {
+            sizes: [50, 50],
+            expandToMin: true,
+            direction: 'horizontal',
+        })
+    }
+    </script>
+    <style>
+      textarea
+        {
+          width:100%;
+          font-size: 18px;
+        }
+      .textarea-wrapper
+        {
+           margin:5px 0;
+           padding:3px;
+        }
+    </style>
+  </head>
+  <body onload="split()">
+    <h1> Try StatSailr </h1>
+    <div class="panes" style="display:flex;">
+      <div id="pane-1" style="background:#e8f8f5;"> 
+        <div style="float:right;">
+          <button id="submit_script" style="margin: 4px 10px 4px auto"> Run StatSailr Srcipt </button>
+        </div>
+        <div class="textarea-wrapper">
+<textarea rows="20">READ builtin="mtcars"
+
+PROC PRINT data=mtcars
+  head 5
+END
+
+PROC PLOT data=mtcars
+  scatter cyl hp
+END
+</textarea>
+          </div>
+      </div>
+      <div id="pane-2" style="background:#ebf5fb;">
+        <div id="result">
+        </div>
+      </div>
+    </div>
+
+    <script>
+    $("#submit_script").on("click", function(){
+      $.ajax({
+        url: '/sailr/run_sailr',
+        method: "post",
+        data: {
+          script_text: $('textarea').val()
+        },
+        success: function(html) {
+          $('#result').html(html);
+        },
+        beforeSend: function(){
+          $('#submit_script').prop('disabled',true);
+          $.LoadingOverlay("show");
+        },
+        complete: function(){
+          $('#submit_script').prop('disabled',false);
+          $.LoadingOverlay("hide");
+        },
+      })
+    })
+    </script>
+  </body>
+</html>
