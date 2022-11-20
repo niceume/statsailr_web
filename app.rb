@@ -25,8 +25,4 @@ class SailrApp < Sinatra::Base
     content_type :html
     result
   end
-
-  get '/css/mystyle.css' do
-    scss :"/scss/mystyle", :style => :expanded
-  end
 end

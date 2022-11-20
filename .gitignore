@@ -7,4 +7,6 @@ Gemfile.lock
 /public/img/result/*.jpeg
 /public/img/result/*.jpg
 /public/img/result/*.png
+/public/css/
+
 /vendor/bundle/
